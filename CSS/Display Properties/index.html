@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Properties</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box{
+            border: 2px solid blue;
+            padding: 20px;
+            margin: 10px; /*margin/padding won't be added from top if the display property is inline. If you set display property inline-block it will apply margin from top of the element also.*/
+            /*for inline display property, we can't set width. */ 
+            display: inline-block;
+            width: 200px;
+        }        
+        .box1{
+            /*for display: none, neither it will be visible nor the space will be reserved*/
+            /* display: none; */ 
+            /*The space will be reserved but the element will be hidden*/
+            /* visibility: hidden ;  */
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        I am a box
+    </div>
+    <div class="box">
+        I am a box
+    </div>
+    <span>I am a good</span>
+    <span>girl.</span>
+</body>
+</html>
