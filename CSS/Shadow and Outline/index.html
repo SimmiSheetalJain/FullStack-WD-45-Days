@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow and Outlines</title>
+    <style>
+        .box{
+            border: 2px solid black;
+            padding: 54px;
+            box-shadow: inset 10px 12px 8px 4px rgb(97, 205, 144);
+        }
+        .textShadow{
+            text-shadow: 3px 2px 11px gray;
+            outline: 3px solid black;
+            outline-offset: 2px;
+            /*Outline is not part of box-model. Outline cannot be curved. But if we add border radius, it will be affected by the border radius.*/
+        }
+    </style>
+</head>
+<body>
+    <!-- Shadows are used to give visual shadows to a box -->
+     <div class="box">
+        I am a box
+     </div>
+     <p class="textShadow">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam incidunt excepturi ullam nemo.
+     </p>
+</body>
+</html>
