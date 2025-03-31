@@ -47,3 +47,21 @@ showEvent();
 console.log(typeof genders);
 console.log(typeof eventDetails);
 console.log(typeof showEvent);
+
+// Stack (This storage type is used for premitives)
+//heap (This storage type is used for non-premitives)
+
+let ceo = "Sheetal Jain"
+let cmd = ceo;
+cmd = "Simmi Jain"; //cuz we got copy of the variable ceo, the actual value will remain same
+
+console.table([
+    ceo,
+    cmd
+])
+
+const eventDetails2 = eventDetails;
+
+eventDetails2.venue = "Pharmacy Building, LNCT Bhopal"; //Cuz we got reference to the memory location, the venue will get changed
+console.log(eventDetails.venue);
+console.log(eventDetails.venue);
