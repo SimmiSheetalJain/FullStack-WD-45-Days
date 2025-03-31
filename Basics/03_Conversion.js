@@ -22,3 +22,16 @@ console.log(intPassword);  //NaN
 
 console.log(Boolean(""));
 console.log(Boolean("Simmi"));
+
+//###################################Operation########################################//
+
+console.log(1+2);  //3
+console.log(1+"2"); //12
+console.log(1+2+"2"); //32, cus 1+2 = 3, then 3 +"2" => 32
+console.log("1"+2+2+"2"); // 1222,  "1" + 2 => "12" + 2 => "122" + 2 => "1222"
+
+// Not recommended but it is allowed 
+let n1, n2, n3;
+n1 = n2 = n3 = 33
+
+console.table([typeof n1, typeof n2, typeof n3,n1,n2,n3]);
