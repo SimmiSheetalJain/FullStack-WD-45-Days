@@ -80,3 +80,5 @@ let hostId3 = 103;
 
 console.log(Array.of(hostId1,hostId2,hostId3));
 
+//continue at https://youtu.be/sscX432bMZo?t=13524
+
