@@ -26,9 +26,14 @@ console.log(loggedIn("Sheetal"));
 
 function product(...numbers){  //We recieve all arguments in numbers
         // We can run a lop on numbers
+        let pro = 1;
+        for (const n of numbers) {
+            pro = pro * n;
+        }
+        console.log(`Product is ${pro}`);
 }
 
-
+product(1,2,3,4,5);
 // Passing an object as arguments
 
 const user = {
