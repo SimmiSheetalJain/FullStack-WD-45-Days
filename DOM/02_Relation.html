@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Child Relation</title>
+</head>
+<body>
+    <div class="parent" >
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+
+    //See the results in console tab in browser developer tool
+
+    const parent = document.querySelector('.parent');
+    // console.log(parent);
+    // console.log(parent.children[1].innerHTML);
+    for (let index = 0; index < parent.children.length; index++) {
+        console.log(parent.children[index].innerHTML);
+    }
+
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+    
+    //child querySelector
+
+    const day = document.querySelector('.day');
+    // console.log(day);
+    // console.log(day.parentElement);
+
+    //Number of nodes 
+    console.log("Number of Nodes : ", parent.childNodes);
+    
+
+</script>
+</html>

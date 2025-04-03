@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript functions to add an html tag</title>
+</head>
+<body>
+    <div>
+        <ul class="skill">
+        </ul>
+    </div>
+</body>
+<script>
+    const li = document.createElement('li')
+    li.appendChild(document.createTextNode("Artificial Intelligence"));
+    document.querySelector('.skill').appendChild(li);
+
+    function addlang(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.skill').appendChild(li);
+    }
+    addlang("Machine Learning");
+    addlang("Deep Learning");
+    addlang("Natural Language Processing");
+
+    //Editing 
+    const thirdSkill = document.querySelector('li:nth-child(3)');
+    thirdSkill.textContent = "Generative AI";
+
+    const tskill = document.createElement('li');
+    tskill.appendChild(document.createTextNode("Python Programming"));
+    thirdSkill.replaceWith(tskill);
+
+    //remove
+
+    const firstskill = document.querySelector('li:nth-child(1)');
+    //Uncomment Below line of js
+    // firstskill.remove();
+
+</script>
+</html>
