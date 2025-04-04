@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout Function</title>
+</head>
+<body>
+    <h1>Exciting Artical on Timeout Function</h1>
+    <p>Save the below code as clock.html and open in browser. Press F12 and you will see nothing on console for 10 Seconds</p>
+    <pre><code>
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang=&quot;en&quot;&gt;
+          &lt;head&gt;
+            &lt;meta charset=&quot;UTF-8&quot; /&gt;
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+            &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+            &lt;title&gt;Your Local Time&lt;/title&gt;
+            &lt;style&gt;
+              body {
+                background-color: #212121;
+                color: #fff;
+              }
+              .center {
+                display: flex;
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+              }
+              #clock {
+                font-size: 40px;
+                background-color: orange;
+                padding: 20px 50px;
+                margin-top: 10px;
+                border-radius: 10px;
+              }
+            &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            &lt;div class=&quot;center&quot;&gt;
+              &lt;div id=&quot;banner&quot;&gt;&lt;span&gt;Your local time&lt;/span&gt;&lt;/div&gt;
+              &lt;div id=&quot;clock&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;script&gt;
+              const clk = document.getElementById('clock');
+              setInterval(function(){
+                  let date = new Date();
+                  clk.innerHTML = `&lt;span&gt;${date.toLocaleTimeString()}&lt;/span&gt;`;    
+              },1000)
+        
+              setTimeout(function(){
+                  console.log('I am a Python Programmer.');
+              },10000)
+            &lt;/script&gt;
+          &lt;/body&gt;
+        &lt;/html&gt;
+    </code></pre>
+    <div style="margin: auto;align-items: center;width:1000px;">
+        <h3>You can see after pressing f12, the log message appears after 10 seconds</h3>        
+    <img src="./setTimeOutDemo.png" alt="" width="700px" height="600px">
+    </div>
+    <h3>Let's use this stop button buy adding some javascript</h3>
+    <br>
+    <button id="stop" style="width: 500px; height:100px;font-size: 50px;">Stop</button>
+</body>
+<script>
+  
+    setTimeout(function(){
+        console.log('I am a Python Programmer.');
+    },10000)
+  
+   /**
+    * Settimeout() is a browser method. This method calls an API. You can also find it in window objects. Hover over the method to know what all arguments it need to be given.
+    * 
+    * We need to pass handler and timeout. A handler is a function. These are very basic arguments
+    * We can pass other arguments based on needs and wants
+    * We can also save function in a varible and can pass varible name has reference of handler
+    *For example: 
+    * const msg = function(){
+    console.log('I am a Python Programmer.');
+    }
+    setTimeout(msg,10000);//Don't att '()' after varible name,it's not a call, it's a reference
+   */
+    
+    const changeh1 = setTimeout(function(){
+        document.querySelector('h1').innerHTML = 'Did you try it yet ??';
+    },10000)
+
+    //clearTimeout(), uncomment below code and click stop button within 10 seconds
+
+    // document.querySelector('#stop').addEventListener('click',function(){
+    //     clearTimeout(changeh1);
+    //     console.log("Tried So Stopped");
+    // })
+</script>
+</html>

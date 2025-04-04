@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Karyakram 2.0</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    //setInterval(handler, time)
+    const saySimmi = function(s){
+        console.log(s, Date.now());
+    }
+    let intervalId;
+    document.querySelector('#start').addEventListener('click',function(){
+        if (!intervalId){
+        intervalId = setInterval(saySimmi, 1000,'Simmi');
+        }
+    })
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(intervalId);
+        intervalId = null;
+    })
+    
+</script>
+</html>
