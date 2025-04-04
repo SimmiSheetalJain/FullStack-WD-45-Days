@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Activity Challenge</title>
+</head>
+<body>
+    <div class="container" style="margin: auto; align-items: center;">
+        <h2>My Gallary</h2>
+        <ul id="img">
+            <li class="catelog" id="dice">
+                <img src="./dice.png" alt="Dice"  width="200px">
+            </li>
+            <li class="catelog" id="earth">
+                <img src="./earthbg.jpg" alt="Earth" width="200px">
+            </li>
+            <li class="catelog" id="pro">
+                <img src="./profile.jpg" alt="Profile" width="200px">
+            </li>
+            <li class="catelog" id="desk">
+                <img src="./deskbg.jpg" alt="Desk" width="200px">
+            </li>
+            <li class="catelog" id="idea">
+                <img src="./ideas.png" alt="Idea" width="200px">
+            </li>
+            <li>
+                <a href="https://google.com" id="google" >google</a>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.querySelector('#img').addEventListener('click', function(e){
+        // console.log(e.target.parentNode);
+        //Removing the image clicked
+        
+        /*Way 1: Adding remove()*/
+
+        // let removeIt = e.target.parentNode;
+        // removeIt.remove();
+
+        //Now, check ig you mistakenly cliked on li dot, all image will be gone, cuz parent node is ul. So We can make some strict checks using if conditions. 
+        let tag = e.target.tagName
+        console.log(e.target.id);           
+        if (tag === 'IMG'){
+            let removeIt  = e.target.parentNode;
+            removeIt.remove();
+        }    
+
+        /*Way 2
+        removeIt.parentNode.removeChild(removeIt); //Lengthy
+        */
+    }, false)
+    // document.querySelector('#google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    // })
+</script>
+
+</html>

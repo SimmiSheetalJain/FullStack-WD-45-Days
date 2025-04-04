@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events in JavaScript</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue">
+    <h2>My Blogs</h2>
+    <div>
+        <ul id="images">
+            <li class="imgCatelog">
+                <img src="./ideas.png" alt="Think and Grow" width="200px" id="ideas" />
+            </li>
+            <li class="imgCatelog">
+                <img src="./dice.png" alt="Life is Game" width="200px" id="dice" />
+            </li>
+            <li class="imgCatelog">
+                <img src="./earthbg.jpg" alt="Save Mother Earth" width="200px" id="earth" />
+            </li>
+            <li class="imgCatelog">
+                <!-- Approach 01
+                    We can inject an event in HTML, but it is not considered good practice.
+                    Here's an example of this practice. (onclick event on deskbg)-->
+                <img src="./deskbg.jpg" alt="Simple Life is Best" width="200px" id="desk"
+                onclick="alert('Simple Desk Image')" />
+            </li>
+            <li class="imgCatelog">
+                <img src="./profile.jpg" alt="Life of Simmi Sheetal Jain" width="200px" id="ssj" />
+            </li>
+            <li class="link-item">
+                <a href="https://google.com" id="google">Google</a>
+            </li>
+        </ul>
+    </div>
+    <div class="notes">
+        <div id="EventObj">
+            <p style="font-size: large;">The Left Side, console window, shows the event Object Variable.There will be browser events and environment events. </p>
+            <img src="./EventObject.png" alt="" width="100%" height="100%">
+        </div>
+    </div>
+</body>
+<script>
+        //Approach 02 (Again, it's not considered best practice)
+        document.getElementById('ssj').onclick = function (){
+            alert('This is simmi sheetal jain.');
+        }
+        //Approach 03 (The Recommended Approach), adding event listner
+        document.getElementById('dice').addEventListener('click',function(){
+                alert('Life is a Game Dost!!Play Diligently and Honestly to Win.');           
+        },false)
+        //attachEvent was also used earlier when it was internet explorer time going on
+        //there was also onEvent in time of jQuery
+
+        //Event object
+        document.addEventListener('click',function(clk){
+            // Here 'clk' is event object, it has lots of things
+            if (clk.target.id == 'ideas'){
+                alert("Thinking is the brightest tool to grow!!")
+            }
+            console.log(clk);
+        })        
+        //The Event Basics To be understood
+        /**
+         * type (eventtypes)
+         * timestamp
+         * defaultPrevented (Preventing Default Behavior)
+         * target
+         * toelement
+         * srcElement
+         * currentTarget
+         * clientPositions: clientX, clientY, screenX, screenY
+         * altkey, ctrlkey, shiftkey, keycode, etc 
+        */
+
+        //Event Propogation
+
+        //What is the use of the thrid argument (true or false) in addEventListener()?
+        /**
+         * When we wil click inside ul, the console will pring the consolde log written for clicking inside ul but when we click on a specific image, both console log , inside ul and Clicked on earth, will get propogated.By default the third argument will be false for addEventListener() but we can change it to true for either of the two or both as well. Whichever will be true will be executed first and if both are true, event of parent eventObject will be propogated first. And when both are false event of the currently clicked eventObject will be propogated first. To stop this we can use event object and can add method stopPropagation(). 
+        */
+        document.getElementById('images').addEventListener('click',function(e){
+                // alert('Life is a Game Dost!!Play Diligently and Honestly to Win.');           
+                console.log('Cliked inside ul');
+                
+        },true)
+        document.getElementById('earth').addEventListener('click',function(e){
+                // alert('Life is a Game Dost!!Play Diligently and Honestly to Win.');           
+                console.log('Clicked on Earth');
+                // e.stopPropagation();   //To prevent Propogation
+        },true)
+    </script>
+</html>
