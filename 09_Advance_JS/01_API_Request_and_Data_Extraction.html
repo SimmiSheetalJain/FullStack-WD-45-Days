@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hey!!Let's Play with this amazing public API</h1>
+    <a href="https://datausa.io/api/data?drilldowns=Nation&measures=Population" target="_blank">See The Data Here</a>
+
+    <h2>Here's The year wise population</h2>
+        <ul id="data">
+
+        </ul>
+    <p id="res"></p>
+</body>
+<script>
+    const requestUrl = 'https://datausa.io/api/data?drilldowns=Nation&measures=Population';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',requestUrl);  //open(requesttype,string) , requesttype: get, post, put, etc., string : API url
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);  
+        if (xhr.readyState === 4){
+            const res = JSON.parse(this.responseText)
+            const data = res.data;
+            console.log("All Population Data:");
+            data.forEach(row => {
+                const li = document.createElement('li');
+                li.appendChild(document.createTextNode(`Year: ${row['ID Year']}, Population: ${row.Population}`));
+                document.querySelector('#data').appendChild(li);
+            });
+            // Let's find out in which year there was highest Population?
+            let maxPopulation  = 0;
+            let year;
+
+            data.forEach((row,index)=>{
+                if (row.Population > maxPopulation){
+                    maxPopulation = row.Population;
+                    year = data[index]['ID Year'];
+                    console.log(year);  
+                }
+            })
+            document.querySelector('#res').innerHTML = `The Highest Population was in ${year} and it was ${maxPopulation}`;
+            console.log(`The Highest Population was in ${year} and it was ${maxPopulation}`);
+        }      
+    }
+    xhr.send();
+</script>
+</html>
