@@ -1,0 +1,16 @@
+h1{
+  color: rgb(21, 166, 77);
+  font-family: cursive;
+  margin: 30px 5px;
+}
+
+input{
+  width: 100%;
+}
+
+.container{
+  text-align: left;
+}
+.row{
+  margin: 5px auto;
+}
