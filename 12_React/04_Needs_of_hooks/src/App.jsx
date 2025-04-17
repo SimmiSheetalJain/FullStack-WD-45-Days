@@ -1,3 +1,5 @@
+import SetCounterCallBack from './SetCounterCallBack'
+
 function App() {
   let counter = 15;
 
@@ -22,6 +24,9 @@ function App() {
     <p>Try clicking the buttons above.</p>
     <a href="https://drive.google.com/file/d/1Qo1QQ7Lg0wwuodlJy6eH_WDyFiVADPRf/view?usp=sharing" alt="Check the console while clicking buttons">View Sample Output</a>
     <p>As shown in the sample, the counter value does not update on the screen. To fix this, we need a way to refresh the UI — and that's where React Hooks come in!</p>
+    <hr />
+    <hr />
+    <SetCounterCallBack curr_counter = {counter}></SetCounterCallBack>
     </>
   )
 }
