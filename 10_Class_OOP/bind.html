@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bind, Prerequisite of React</title>
-</head>
-<body>
-    REGIRIGHN
+  </head>
+  <body>
+    <h1>Working of React Js behind the hood</h1>
     <button>Hit Me</button>
-</body>
-    <script>
-        class React{
-            constructor(){
-                this.Library = "React"
-                this.server = "https://localhost:300"
-                //requirement, as soon as the page is loaded , an object of react is created and we get a reference of that object
-                document.querySelector('button').addEventListener('click',this.handleClick.bind(this));
-            }
+  </body>
+  <script>
+    class React {
+      constructor() {
+        this.Library = "React";
+        this.server = "https://localhost:3000";
+        //requirement, as soon as the page is loaded , an object of react is created and we get a reference of that object
+        document
+          .querySelector("button")
+          .addEventListener("click", this.handleClick.bind(this));
+      }
 
-            handleClick(){
-                console.log("Button Click");
-                console.log(this);
-            }
-        }
-        const app = new React();
-    </script>
+      handleClick() {
+        console.log("Button Clicked");
+        console.log(this);
+      }
+    }
+    const app = new React();
+  </script>
 </html>
+
+<!-- 
+The above code demonstrate how react works behind the hood.
+Page Load
+  ↓
+Component Instance Created
+  ↓
+Event Handlers Bound with Correct `this`
+  ↓
+User Clicks Button
+  ↓
+Bound Function Executes
+  ↓
+Component Logic Runs
+-->

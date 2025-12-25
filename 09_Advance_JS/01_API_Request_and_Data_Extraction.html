@@ -30,11 +30,8 @@
         console.log("All Population Data:");
         data.forEach((row) => {
           const li = document.createElement("li");
-          li.appendChild(
-            document.createTextNode(
-              `Year: ${row["ID Year"]}, Population: ${row.Population}`
-            )
-          );
+          console.log(row);
+          li.appendChild(document.createTextNode(`${row}`));
           document.querySelector("#data").appendChild(li);
         });
         // Let's find out in which year there was highest Population?
